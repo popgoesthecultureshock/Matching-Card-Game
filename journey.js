@@ -9,18 +9,18 @@ const quotes = [
 ]
 
 const cards = [
-  { name: 'd1', img: 'Matching-Card-Game/Images/Alaska.png' },
-  { name: 'd2', img: 'Matching-Card-Game/Images/AlyssaEdwards.png' },
-  { name: 'd3', img: 'Matching-Card-Game/Images/CocoMontrese.png' },
-  { name: 'd4', img: 'Matching-Card-Game/Images/Detox.png' },
-  { name: 'd5', img: 'Matching-Card-Game/Images/Eureka.png' },
-  { name: 'd6', img: 'Matching-Card-Game/Images/IvyWinters.png' },
-  { name: 'd7', img: 'Matching-Card-Game/Images/JinkxMonsoon.png' },
-  { name: 'd8', img: 'Matching-Card-Game/Images/Lineysha.png' },
-  { name: 'd9', img: 'Matching-Card-Game/Images/Roxxxy.png' },
-  { name: 'd10', img: 'Matching-Card-Game/Images/SashaVelour.png' },
-  { name: 'd11', img: 'Matching-Card-Game/Images/SheaCoulee.png' },
-  { name: 'd12', img: 'Matching-Card-Game/Images/TheTuck.png' }
+  { name: 'd1', img: 'Images/Alaska.png' },
+  { name: 'd2', img: 'Images/AlyssaEdwards.png' },
+  { name: 'd3', img: 'Images/CocoMontrese.png' },
+  { name: 'd4', img: 'Images/Detox.png' },
+  { name: 'd5', img: 'Images/Eureka.png' },
+  { name: 'd6', img: 'Images/IvyWinters.png' },
+  { name: 'd7', img: 'Images/JinkxMonsoon.png' },
+  { name: 'd8', img: 'Images/Lineysha.png' },
+  { name: 'd9', img: 'Images/Roxxxy.png' },
+  { name: 'd10', img: 'Images/SashaVelour.png' },
+  { name: 'd11', img: 'Images/SheaCoulee.png' },
+  { name: 'd12', img: 'Images/TheTuck.png' }
   // { name: 'd1', img: 'Matching-Card-Game/Images/Aja.png' },
   // { name: 'd7', img: 'Matching-Card-Game/Images/Honey.png' },
   // { name: 'd9', img: 'Matching-Card-Game/Images/Jade.png' },
@@ -100,7 +100,7 @@ const createCards = () => {
     <img class="frontIMG" src="${el.img}"/>
     </div>
     <div class="BACK">
-    <img class="backIMG" id = "${el.name}" src="Matching-Card-Game/Images/BACK.png"/>
+    <img class="backIMG" id = "${el.name}" src="Images/BACK.png"/>
     </div>`
     CardBoard.append(card)
   })
