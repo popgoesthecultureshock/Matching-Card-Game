@@ -1,11 +1,15 @@
 // -------constants----------
+const pageAudio = new Audio('Audio/GoodLuck_Final.mp3')
+
 const quotes = [
   `Don't get bitter, just get better.`,
   `I feel like you’re being sabotaged by your inner saboteur.`,
   `It’s okay to fall down. Get up, look sickening, and make them eat it!`,
   `I’m not going to panic because I don’t do that anymore. It’s going to be okay.`,
   `When the going gets tough, the tough reinvent themselves.`,
-  `She already done had herses.`
+  `She already done had herses.`,
+  `Well what you wanna do is not necessarily what your gunna do.`,
+  `Your tone seems very pointed right now.`
 ]
 
 const cards = [
@@ -21,24 +25,17 @@ const cards = [
   { name: 'd10', img: 'Images/SashaVelour.png' },
   { name: 'd11', img: 'Images/SheaCoulee.png' },
   { name: 'd12', img: 'Images/TheTuck.png' }
-  // { name: 'd1', img: 'Matching-Card-Game/Images/Aja.png' },
-  // { name: 'd7', img: 'Matching-Card-Game/Images/Honey.png' },
-  // { name: 'd9', img: 'Matching-Card-Game/Images/Jade.png' },
-  // { name: 'd12', img: 'Matching-Card-Game/Images/Penny.png' },
-  // { name: 'd15', img: 'Matching-Card-Game/Images/SerenaChaCha.png' },
-  // { name: 'd18', img: 'Matching-Card-Game/Images/Vivienne.png' }
 ]
 // Audio?
 
 // -------apps state (variables)---------
 let front
 let back
-// let points
+let points
 let click = 0
 let firstCard
 let secondCard
-let tally
-//there isn't going to be a winner, its just about how few turns you can do it in
+let tally //there isn't going to be a winner, its just about how few turns you can do it in
 // -------cached element references---------
 const CardBoard = document.querySelector('#CardBoard')
 let turnTally = document.querySelector('.tally') // tally for the amount of turns the user beat the level in
@@ -71,11 +68,15 @@ const individual = () => {
 // -------functions----------
 const init = () => {
   tally = 0
-  // points = 0
+  points = 0
   board = null
   activeTurn = false
   // activeCards = null
   click = 0
+}
+
+window.onload = function () {
+  document.getElementById('my_audio').play()
 }
 
 const cardsFront = () => {
@@ -110,7 +111,7 @@ createCards() // creat a div for every card you have in that cards available Arr
 
 const renderTally = () => {
   const score = turnTally
-  score.innerText = `Tally ${(tally += 1)}`
+  score.innerText = `Tally: ${(tally += 1)} "/n" Snatches: ${points++}`
 }
 
 const playerTurn = (evt) => {
@@ -125,21 +126,20 @@ const playerTurn = (evt) => {
       setTimeout(() => {
         firstCard.parentNode.classList.remove('hiddenClass')
         secondCard.parentNode.classList.remove('hiddenClass')
+        if (click === 2) {
+          click = null
+        }
       }, 1000)
       click = 0
     } else if (firstCard.id === secondCard.id) {
-      // points++
+      points++
       addClass = 'match'
       click = 0
     }
     renderTally()
   }
 }
-// for when the card is clicked, it will turn over, revealing its face to the user.
-// The card will stay turned over until a second card is clicked and turned over. When two cards get clicked, a point will be added to the tally board.
-// If the numbers on the cards are the SVGMaskElement, the cards will stay flipped over. If the numbers are different, the cards will turn back around.
-// ONce all the cards are turned over (all matches have been made), the game will be finished.
-// Each time the game SVGTransformList, the cards will be randomly set to each spot.
+
 // -------event listeners----------
 back.forEach((card) => {
   card.addEventListener('click', function (evt) {
@@ -149,5 +149,7 @@ back.forEach((card) => {
     playerTurn(evt)
   })
 })
-// listen for a click on any card. Then any other card. Then after the second click, turn both cards back around if they dont matchMedia.
+
 init()
+
+// audio c/o https://www.youtube.com/watch?v=4nVO8qVGZFQ&list=OLAK5uy_lfiVllZ4zSwJZZk4zXrMTFaK_RaGKsYtY and RuPaul's Drag Race.
