@@ -1,0 +1,19 @@
+--HTML--
+The HTML on the main page is going to need a title, and a link to start the game play. There may be three links for the three levels, or there may be one link and the levels go into each other upon that levels completion. There will also be a header welcoming the user.
+The game page will regire a div for each card. 
+There will be a board that counts 'turns'. 
+There will also be several h2s that will be different quotes from the show.
+Once the game is over, a next level button will appear. After the third game, a return to home button will appear. 
+--CSS--
+Everything will be styled center on the main page, most likely using grid or a grid/flex smoothie. The game page will have three layouts on the levels. A 6 by 5 box of squares (24), a 6 by 5 box of squares (30) and a 6 by 6 box of squares (36). 
+There will be a tally board on the left side of the page, and a randomized quote from a list of quotes on the right side of the page. The fonts will pop againt the hot pink bakground. 
+--JS--
+-An array will have to be made for all the slots on the board. As well as arrays for the cards at each level. Each of the cards will be randomly assigned to a spot on the board each time. 2 of each card will be present on every level, so:
+    -12 pairs for level 1, 
+    -15 pairs for level 2, 
+    -18 pairs for level 3.
+-An event listener will have to happen every time a card is clicked that will turn the card around. That card will also have to stay flipped until another card is turned over. 
+-If the card does not match with the first card, both cards will turn back around awaiting to be clicked again. the cards will be assigned a number value. 
+-If the cards do match, they will stay flipped over and will not be able to be clicked on again until the end of the game. 
+-A 'turn' means two clicks have happened. There will need to be an event listener for a second click, whether the cards match or not. This will add another tally to the score either way.
+-When the game is over, the next level button will appear, or the home button after the third game. The score board will also say game over over the tallys(number of turns).

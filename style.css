@@ -1,0 +1,127 @@
+body {
+  background-image: url(Matching-Card-Game/Images/WerkRoom.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: pink;
+  font-family: Helvetica;
+  text-shadow: 2px 2px lime;
+  color: fuchsia;
+}
+#Match{
+  font-family: 'Monoton', cursive;
+  font-family: 'Rubik Moonrocks', cursive;
+  font-size: 8vmin;
+  text-shadow: 2px 2px lime;
+  display: flex;
+}
+#House {
+  display: flex;
+  flex-direction: row;
+}
+main {
+  display: flex;
+  text-align:center;
+  flex-direction: column;
+}
+#CardBoard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  max-width: 800px;
+  width: 100vw;
+}
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  height: 50px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 50%;
+  color: lime;
+  background-color: fuchsia;
+  
+}
+button:hover{
+  color: fuchsia;
+  background-color: lime;
+  opacity: 100%;
+  border-color: fuchsia;
+}
+.hiddenClass {
+  display: none !important;
+}
+
+.TheCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+}
+
+.backIMG {
+  max-height: 175px;
+  max-width: 125px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: space-evenly;
+  
+}
+.frontIMG {
+  display: flex;
+  max-height: 175px;
+  max-width: 121px;
+  align-content: space-evenly;
+}
+.FRONT {
+  height: 175px;
+  width: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.BACK {
+  position: absolute;
+  height: 175px;
+  width: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.tally, .points {
+  background-color: pink;
+  display: flex;
+  justify-content: flex-start;
+  width: fit-content;
+}
+
+.quote {
+  background-color: pink;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: fit-content;
+}
+
+#top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+div {
+  max-height: 300px;
+  max-width: 100px;
+}
+
+/* cards recieved at: https://www.deviantart.com/yudelrey/art/Drag-Cards-RuPaul-s-Drag-Race-Season-9-726892051 */
