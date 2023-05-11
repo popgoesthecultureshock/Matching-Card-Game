@@ -26,7 +26,6 @@ const cards = [
   { name: 'd11', img: 'Images/SheaCoulee.png' },
   { name: 'd12', img: 'Images/TheTuck.png' }
 ]
-// Audio?
 
 // -------apps state (variables)---------
 let front
@@ -36,6 +35,7 @@ let click = 0
 let firstCard
 let secondCard
 let tally //there isn't going to be a winner, its just about how few turns you can do it in
+let freezeClick = false
 // -------cached element references---------
 const CardBoard = document.querySelector('#CardBoard')
 let turnTally = document.querySelector('.tally') // tally for the amount of turns the user beat the level in
@@ -111,7 +111,7 @@ createCards() // creat a div for every card you have in that cards available Arr
 
 const renderTally = () => {
   const score = turnTally
-  score.innerText = `Tally: ${(tally += 1)} "/n" Snatches: ${points++}`
+  score.innerText = `Tally: ${(tally += 1)}`
 }
 
 const playerTurn = (evt) => {
@@ -126,28 +126,39 @@ const playerTurn = (evt) => {
       setTimeout(() => {
         firstCard.parentNode.classList.remove('hiddenClass')
         secondCard.parentNode.classList.remove('hiddenClass')
-        if (click === 2) {
-          click = null
-        }
+        // firstCard.attr('disabled', 'disabled')
+        // freezeClick = true
+        // evt.stopPropogation()
+        // evt.preventDefault()
       }, 1000)
       click = 0
     } else if (firstCard.id === secondCard.id) {
       points++
-      addClass = 'match'
+      console.log(firstCard)
+      firstCard.classList.add('match')
+      secondCard.classList.add('match')
       click = 0
     }
     renderTally()
   }
 }
 
+const getWin = () => {
+  if (cards.className.includes('match')) {
+    turnTally.innerHTML = `Shantay, you stay!`
+  }
+}
+
 // -------event listeners----------
 back.forEach((card) => {
-  card.addEventListener('click', function (evt) {
-    console.log(evt.target)
-    card.classList.add('hiddenClass')
-    console.log(card)
-    playerTurn(evt)
-  })
+  card.addEventListener(
+    'click',
+    function (evt) {
+      card.classList.add('hiddenClass')
+      playerTurn(evt)
+    },
+    true
+  )
 })
 
 init()
