@@ -10,7 +10,7 @@
   align-items: center;
   background-color: pink;
   font-family: Helvetica;
-  text-shadow: 2px 2px lime;
+  text-shadow: 3px 4px lime;
   color: fuchsia;
   height: 56vh;
 }
@@ -27,21 +27,21 @@
   align-items:center;
   background-color: pink;
   font-family: Helvetica;
-  text-shadow: 2px 2px lime;
+  text-shadow: 3px 3px lime;
   color: fuchsia;
 }
 #Match1 {
   font-family: 'Monoton', cursive;
   font-family: 'Rubik Moonrocks', cursive;
   font-size: 12vmin;
-  text-shadow: 2px 2px lime;
+  text-shadow: 5px 5px lime;
   display: flex;
 }
 #Match2 {
   font-family: 'Monoton', cursive;
   font-family: 'Rubik Moonrocks', cursive;
   font-size: 8vmin;
-  text-shadow: 2px 2px lime;
+  text-shadow: 5px 5px lime;
   display: flex;
 }
 head {
@@ -52,6 +52,7 @@ head {
 #House {
   display: flex;
   flex-direction: row;
+  
 }
 main {
   display: flex;
@@ -88,6 +89,12 @@ main {
   background-color: fuchsia;
   border-color: lime;
   border-width: 5px;
+}
+#startButton:hover{
+  color: fuchsia;
+  background-color: lime;
+  opacity: 100%;
+  border-color: fuchsia;
 }
 #restartButton:hover{
   color: fuchsia;
@@ -127,18 +134,16 @@ a {
 .frontIMG {
   display: flex;
   max-height: 20vmin;
-  max-width: 14vmin
+  max-width: 13vmin
   align-content: space-evenly;
 }
 .FRONT {
-  height: 175px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
 .BACK {
   position: absolute;
-  height: 175px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;

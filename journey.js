@@ -15,7 +15,7 @@ const quotes = [
 
 const cards = [
   { name: 'd1', img: 'Images/Alaska.png' },
-  { name: 'd2', img: 'Images/AlyssaEdwards.png' },
+  { name: 'd2', img: 'Images/AlyssaEdwards.jpg' },
   { name: 'd3', img: 'Images/CocoMontrese.png' },
   { name: 'd4', img: 'Images/Detox.png' },
   { name: 'd5', img: 'Images/Eureka.png' },
@@ -142,13 +142,14 @@ const playerTurn = (evt) => {
       firstCard.classList.add('match')
       secondCard.classList.add('match')
       click = 0
+      getWin()
     }
   }
 }
 
 const getWin = () => {
   if (matchCount === 12) {
-    turnTally.innerHTML = `Shantay, you stay!`
+    turnTally.innerText = `Shantay, you stay! Tally: ${(tally += 1)}`
   }
 }
 
