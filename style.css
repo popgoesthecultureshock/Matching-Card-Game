@@ -1,12 +1,30 @@
-body {
+.body1 {
+  background-image: url(Images/WerkRoom.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+  font-family: Helvetica;
+  text-shadow: 2px 2px lime;
+  color: fuchsia;
+  height: 56vh;
+}
+
+.body2 {
   background-image: url(Images/WerkRoom.png);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items:center;
   background-color: pink;
   font-family: Helvetica;
   text-shadow: 2px 2px lime;
@@ -26,6 +44,11 @@ body {
   text-shadow: 2px 2px lime;
   display: flex;
 }
+head {
+  display:flex;
+  flex-direction: row;
+
+}
 #House {
   display: flex;
   flex-direction: row;
@@ -40,8 +63,8 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
-  max-width: 140vmin;
-  width: 100vw;
+  max-width: 130vmin;
+  /* width: 100vw; */
 }
 .StartPageTitle {
   display: flex;
@@ -51,7 +74,7 @@ main {
   flex-direction: column;
 }
 
-button {
+#startButton {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   height: 50px;
@@ -59,12 +82,14 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
   opacity: 50%;
   color: lime;
   background-color: fuchsia;
-  
+  border-color: lime;
+  border-width: 5px;
 }
-button:hover{
+#restartButton:hover{
   color: fuchsia;
   background-color: lime;
   opacity: 100%;
@@ -91,8 +116,8 @@ a {
 }
 
 .backIMG {
-  max-height: 175px;
-  max-width: 125px;
+  max-height: 20vmin;
+  max-width: 15vmin;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -101,8 +126,8 @@ a {
 }
 .frontIMG {
   display: flex;
-  max-height: 175px;
-  max-width: 121px;
+  max-height: 20vmin;
+  max-width: 14vmin
   align-content: space-evenly;
 }
 .FRONT {
@@ -142,8 +167,26 @@ a {
   width: 100%;
 }
 
-#foobar {
-  display: none;
+#restartButton {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column-reverse;
+  opacity: 50%;
+  color: lime;
+  align-items: center;
+  justify-content: center;
+  background-color: fuchsia;
+  border-color: lime;
+  border-width: 5px;
+  height: 40px;
+  width: 100px;
+}
+
+.noClick {
+  pointer-events: none;
 }
 
 /* cards recieved at: https://www.deviantart.com/yudelrey/art/Drag-Cards-RuPaul-s-Drag-Race-Season-9-726892051 */

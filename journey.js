@@ -1,5 +1,6 @@
 // -------constants----------
 const pageAudio = new Audio('Audio/GoodLuck_Final.mp3')
+const matchAudio = new Audio('Audio/Back rolls!?_AE.mp3')
 
 const quotes = [
   `Don't get bitter, just get better.`,
@@ -36,6 +37,7 @@ let firstCard
 let secondCard
 let tally //there isn't going to be a winner, its just about how few turns you can do it in
 let freezeClick = false
+let matchCount = 0
 // -------cached element references---------
 const CardBoard = document.querySelector('#CardBoard')
 let turnTally = document.querySelector('.tally') // tally for the amount of turns the user beat the level in
@@ -71,6 +73,7 @@ const init = () => {
   points = 0
   board = null
   activeTurn = false
+  matchCount = 0
   // activeCards = null
   click = 0
 }
@@ -121,33 +124,38 @@ const playerTurn = (evt) => {
   if (click === 1) {
     firstCard = evt.target
   } else if (click === 2) {
+    renderTally()
     secondCard = evt.target
+    CardBoard.classList.add('noClick')
     if (firstCard.id !== secondCard.id) {
       setTimeout(() => {
+        CardBoard.classList.remove('noClick')
         firstCard.parentNode.classList.remove('hiddenClass')
         secondCard.parentNode.classList.remove('hiddenClass')
-        // firstCard.attr('disabled', 'disabled')
-        // freezeClick = true
-        // evt.stopPropogation()
-        // evt.preventDefault()
-      }, 1000)
+      }, 500)
       click = 0
     } else if (firstCard.id === secondCard.id) {
-      points++
-      console.log(firstCard)
+      CardBoard.classList.remove('noClick')
+      matchCount++
+      matchAudio.currentTime = 0
+      matchAudio.play()
       firstCard.classList.add('match')
       secondCard.classList.add('match')
       click = 0
     }
-    renderTally()
   }
 }
 
 const getWin = () => {
-  if (cards.className.includes('match')) {
+  if (matchCount === 12) {
     turnTally.innerHTML = `Shantay, you stay!`
   }
 }
+
+const restart = () => {
+  location.reload()
+}
+document.getElementById('restartButton').addEventListener('click', restart)
 
 // -------event listeners----------
 back.forEach((card) => {
