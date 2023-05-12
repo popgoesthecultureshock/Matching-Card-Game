@@ -8,7 +8,7 @@ const quotes = [
   `It’s okay to fall down. Get up, look sickening, and make them eat it!`,
   `I’m not going to panic because I don’t do that anymore. It’s going to be okay.`,
   `When the going gets tough, the tough reinvent themselves.`,
-  `She already done had herses.`,
+  `She done already done had herses.`,
   `Well what you wanna do is not necessarily what your gunna do.`,
   `Your tone seems very pointed right now.`
 ]
@@ -31,18 +31,16 @@ const cards = [
 // -------apps state (variables)---------
 let front
 let back
-let points
 let click = 0
 let firstCard
 let secondCard
 let tally //there isn't going to be a winner, its just about how few turns you can do it in
-let freezeClick = false
 let matchCount = 0
 // -------cached element references---------
 const CardBoard = document.querySelector('#CardBoard')
 let turnTally = document.querySelector('.tally') // tally for the amount of turns the user beat the level in
 
-const cardsAvailable = [...cards, ...cards]
+const cardsAvailable = [...cards, ...cards] // this is a new array doubles the cards array so that each card will have an appropriate match.
 function shuffle(array) {
   let currentIndex = array.length,
     randomIndex
@@ -53,7 +51,7 @@ function shuffle(array) {
       array[randomIndex],
       array[currentIndex]
     ]
-  }
+  } // this is the Fisher-Yates shuffle. An algorithm that generates a random order of an array.
 
   return array
 }
@@ -65,34 +63,31 @@ const totalCards = cardsAvailable.length
 const individual = () => {
   front = document.querySelector('.FRONT')
   back = document.querySelectorAll('.BACK')
-}
+} // this is assigning variables to the front and back of each cards that is generated below. All in its own constant.
 
 // -------functions----------
 const init = () => {
   tally = 0
   points = 0
-  board = null
-  activeTurn = false
   matchCount = 0
-  // activeCards = null
   click = 0
 }
 
 window.onload = function () {
   document.getElementById('my_audio', 'my_audio2').play()
-}
+} // this starts the audio in the game html whenwver the page loads
 
 const cardsFront = () => {
   for (let i = 0; i < cards.length; i++) {
     document.querySelector('.FRONT').innerHTML = `<img src=${cards[i].img}/>`
-  }
+  } //this is making each card have a different front image based on the above array of cards
 }
 
 const randomQuote = () => {
   document.querySelector('.quote').textContent = `"${
     quotes[Math.floor(Math.random() * quotes.length)]
   }"`
-}
+} // this generates a random maybe inspirational quote from the above array of quotes from drag race.
 randomQuote()
 
 const createCards = () => {
@@ -107,15 +102,15 @@ const createCards = () => {
     <img class="backIMG" id = "${el.name}" src="Images/BACK.png"/>
     </div>`
     CardBoard.append(card)
-  })
+  }) // this creates the cards in javascript so we don't have to type them all out as constants in HTML. Since the cards are going to change positions every time the page loads.
   individual()
 }
-createCards() // creat a div for every card you have in that cards available Array, take the variable you assigned the div to to .HTML.
+createCards() // create a div for every card you have in that cards available Array, take the variable you assigned the div to to .HTML. (Done above)
 
 const renderTally = () => {
   const score = turnTally
   score.innerText = `Tally: ${(tally += 1)}`
-}
+} //This keeps track of every 'turn' that takes place. A turn being two clicks.
 
 const playerTurn = (evt) => {
   click++
@@ -145,18 +140,18 @@ const playerTurn = (evt) => {
       getWin()
     }
   }
-}
+} // This is what I am most proud of and this is the actual gameplay. This establiskes clicks as a turn. For every one click, it targets the event listener below. It does the same on the second click, only then, it checks to see if the id of the revealed second card matches the id of the revealed first card. If they don't match, the cards will wait half a second and then flip back over. You are unable to click on any more cards for that half a second. And that feature was a whole thing. If they do match, they stay flipped over, and you hear Alyssa Edwards say "Backrolls?!" Which I think is hilarious and makes me laugh every time. It also resets the clicks so that the next turn will start with click one. It also adds a class of 'match' to each of the cards with the same id that remain flipped over.
 
 const getWin = () => {
   if (matchCount === 12) {
     turnTally.innerText = `Shantay, you stay! Tally: ${(tally += 1)}`
   }
-}
+} // When all 12 pairs of cards have the id of 'match', this function displays a win message and the final turn tally it took for you to make it through.
 
 const restart = () => {
   location.reload()
 }
-document.getElementById('restartButton').addEventListener('click', restart)
+document.getElementById('restartButton').addEventListener('click', restart) // this function adds an event listener that triggers a restart button feature that essentially reloads to page to play again.
 
 // -------event listeners----------
 back.forEach((card) => {
@@ -168,7 +163,7 @@ back.forEach((card) => {
     },
     true
   )
-})
+}) // this is an event listener that removes the back of the card so the front can be potentially matched.
 
 init()
 

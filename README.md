@@ -2,7 +2,7 @@
 
 # Match The House Down Boots
 
-## Date: May the Fourth be with you
+## Date: 5/12/23
 
 ### By: Cody Garcia
 
@@ -18,9 +18,9 @@ In a world where drag is on the forefront of issues to be addressed by certain p
 Drag is not evil. While some drag queens are not good... _you know who you are_... They still have the right to be who they are, just like any citizen.
 This matching game honors the moving-to-mainstream art form that is drag, and just some of the queens that emerged from the 14 seasons of RuPauls Drag Race. Heard of it?
 
-This is a memory matching card game that users can play to see some of their favorite queens, and compete with each other with their high scores, or low score: how few turns it takes them.
-Chantay you stay through all three levels of 24, 30, and 36 cards in less turns than your friends, or sashay away.
-Spread the joys drag can create sharing this child friendly game with your friends and family!
+This is a memory matching card game that users can play to see some of their favorite queens, and compete with each other with their high scores, or low score: since the every turn is tallied. How few turns will it take you to match all the queens?.
+Chantay you stay through all 24 cards in less turns than your friends, or sashay away.
+Spread the joys drag can create sharing this game with your friends and family!
 
 ---
 
@@ -31,11 +31,10 @@ Spread the joys drag can create sharing this child friendly game with your frien
 - Opening page of the Werk Room, welcoming the user and containing with links to the three different levels. Or one link to start the game, and the levels happen, one after the other.
 
 - Each game play takes place in the center of the screen, with a move tally on the left, and random words of encouragement from the show on the right.
-  - 24 / 6 by 4
-  - 30 / 6 by 5
-  - 36 / 6 by 6
 
-**Quotes to be randomly cycled**:
+- Every time you get a match, Alyss Edwards congratulates you with a famous quote from the show: "Backrolls?!" Search through the cards to find all 12 matches in as few turns as you can.
+
+**Quotes randomly cycled**:
 
 -"Don't get bitter, just get better."
 
@@ -47,9 +46,23 @@ Spread the joys drag can create sharing this child friendly game with your frien
 
 -"When the going gets tough, the tough reinvent themselves."
 
--"She already done had herses."
+-"She done already done had herses."
+
+-"Well what you wanna do is not necessarily what your gunna do."
+
+-"Your tone seems very pointed right now."
 
 ### **_Screenshots_**
+
+![Image](Images/WireFramingBoots.png)
+
+![Image](Images/ScreenShot2.png)
+
+![Image](Images/ScreenShot3.png)
+
+![Image](Images/ScreenShot4.png)
+
+### **_Source Photos_**
 
 ![Image](https://pbs.twimg.com/media/EUYZE8qXsAMnDaH?format=jpg&name=large)
 
@@ -62,8 +75,6 @@ Spread the joys drag can create sharing this child friendly game with your frien
 - [x] README
 - [x] Pseudocode
 - [x] Wireframing
-- [ ] Trello
-- [ ] Or even ==Highlight== Items
 
 **_Credits_**
 

@@ -124,7 +124,7 @@ a {
 
 .backIMG {
   max-height: 20vmin;
-  max-width: 15vmin;
+  max-width: 16vmin;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -192,6 +192,14 @@ a {
 
 .noClick {
   pointer-events: none;
+}
+
+#my_audio {
+  position:fixed;
+  top: 0;
+  right: 0;
+  width: 100px;
+  color: pink;
 }
 
 /* cards recieved at: https://www.deviantart.com/yudelrey/art/Drag-Cards-RuPaul-s-Drag-Race-Season-9-726892051 */
