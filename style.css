@@ -64,8 +64,8 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
-  max-width: 130vmin;
-  /* width: 100vw; */
+  max-width: 140vmin;
+  max-height: 80vmin;
 }
 .StartPageTitle {
   display: flex;

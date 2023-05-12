@@ -1,6 +1,6 @@
 // -------constants----------
 const pageAudio = new Audio('Audio/GoodLuck_Final.mp3')
-const matchAudio = new Audio('Audio/Back rolls!?_AE.mp3')
+const matchAudio = new Audio('Audio/BackRolls_AE.mp3')
 
 const quotes = [
   `Don't get bitter, just get better.`,
@@ -79,7 +79,7 @@ const init = () => {
 }
 
 window.onload = function () {
-  document.getElementById('my_audio').play()
+  document.getElementById('my_audio', 'my_audio2').play()
 }
 
 const cardsFront = () => {
